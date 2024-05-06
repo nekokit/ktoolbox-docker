@@ -12,10 +12,10 @@
 docker build -t ktoolbox .
 docker run -it --rm \
     --name ktoolbox \
+    --user 1000:1000 \
     -v ./output:/work/output \
-    -e PUID=1000 \
-    -e PGID=1000 \
     -e KEMONO_CREATOR_URL=XXXX \
     ktoolbox
 ```
 
+请注意：为避免权限问题，`/work/output` 的映射路径应当确保在启动前存在，且 user:group 应与启动参数 `user` 一致。

@@ -2,9 +2,8 @@ services:
   ktoolbox:
     build: .
     container_name: ktoolbox
+    user: 1000:1000
     volumes:
       - ./output:/work/output
     environment:
-      - PUID=1000
-      - PGID=1000
-      - KEMONO_CREATOR_URL=https://kemono.su/fanbox/user/4234383
+      - KEMONO_CREATOR_URL=XXXX

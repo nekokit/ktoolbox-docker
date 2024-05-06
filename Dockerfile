@@ -5,10 +5,13 @@ RUN pip3 install ktoolbox
 WORKDIR /work
 COPY ./entrypoint.sh /work/
 
-RUN chmod u+x entrypoint.sh
+RUN chmod a+x entrypoint.sh \
+    && groupadd -r appuser && useradd -r -g appuser appuser
+
+USER appuser
 
 ENV KEMONO_CREATOR_URL=NONE
-ENV PUID=1000
-ENV PGID=1000
+
+VOLUME [ "/work/output" ]
 
 ENTRYPOINT [ "./entrypoint.sh" ]
