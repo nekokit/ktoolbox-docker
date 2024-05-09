@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "User: `id -u`:`id -g`"
 echo "PWD: `pwd`"
 python3 -V
@@ -11,3 +10,6 @@ if [[ $KEMONO_CREATOR_URL =~ ^(https?:\/\/)?kemono.(su|party)\/(.+)$ ]]; then
 else
   echo "Error | Wrong url: $KEMONO_CREATOR_URL" >> output/error.log
 fi
+
+echo
+echo "All Done"
