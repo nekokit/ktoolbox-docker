@@ -4,6 +4,9 @@ services:
     container_name: ktoolbox
     user: 1000:1000
     volumes:
-      - ./output:/work/output
-    environment:
-      - KEMONO_CREATOR_URL=XXXX
+      - /path/to/downloads:/downloads
+    command:
+      [
+        "download-post",
+        "https://kemono.su/fanbox/user/49494721/post/6608808"
+      ]
